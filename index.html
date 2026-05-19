@@ -468,6 +468,33 @@
             جميع الحقوق محفوظة © 2026 - المدرسة القرآنية دلائل الخير
         </div>
     </footer>
+<!-- --- Firebase Configuration & Initialization --- -->
+    <script type="module">
+        // 1. Import the core Firebase SDK and the specific modules we actually need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+        // 2. Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBIlmZXAVQ0RGS1BL_tbfyUjUKZYD9d3rY",
+            authDomain: "dalail-alkhayr.firebaseapp.com",
+            projectId: "dalail-alkhayr",
+            storageBucket: "dalail-alkhayr.firebasestorage.app",
+            messagingSenderId: "602204800156",
+            appId: "1:602204800156:web:24d67d3be8f2d2ab319959",
+            measurementId: "G-0JX7XE0XT1"
+        };
+
+        // 3. Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        // 4. Initialize our backend services so we can use them across the site
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Confirmation log for our testing phase
+        console.log("Firebase has successfully connected to Dalail Al-Khair!");
+    </script>
 </body>
 </html>
