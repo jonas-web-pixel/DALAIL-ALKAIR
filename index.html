@@ -7,12 +7,19 @@
     <title>المدرسة القرآنية دلائل الخير | بوابة الطالب</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("k51-024S84tmm6yFk"); // مفتاحك العام مدمج وجاهز هنا
+       })();
+    </script>
+   
     <style>
         :root {
-            --primary: #0a7a66; 
+            --primary: #0a7a66;
             --primary-dark: #064e3b;
-            --secondary: #8cc63f; 
+            --secondary: #8cc63f;
             --bg-light: #f8fafc;
             --text-dark: #1e293b;
             --text-gray: #64748b;
@@ -99,7 +106,7 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
         }
-        
+       
         .hero h1 span {
             color: var(--secondary);
         }
@@ -127,6 +134,7 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .btn-student {
@@ -233,7 +241,6 @@
             width: 100%;
             height: 200px;
             background-color: #cbd5e1;
-            background-image: url('https://images.unsplash.com/photo-1584553421349-355dbcbaffd4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -314,7 +321,6 @@
             color: var(--secondary);
         }
 
-        /* Custom Facebook Button Style */
         .fb-btn {
             display: inline-flex;
             align-items: center;
@@ -341,6 +347,16 @@
             border-top: 1px solid #334155;
             font-size: 0.9rem;
         }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 <body>
@@ -353,8 +369,7 @@
         <nav>
             <ul>
                 <li><a href="#"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
-                <li><a href="#quran"><i class="fa-solid fa-book-quran"></i> القرآن الكريم</a></li>
-                <li><a href="#hadith"><i class="fa-solid fa-book-open"></i> الأحاديث</a></li>
+                <li><a href="#features"><i class="fa-solid fa-book-quran"></i> عن المدرسة</a></li>
                 <li><a href="#news"><i class="fa-solid fa-newspaper"></i> الأخبار</a></li>
             </ul>
         </nav>
@@ -363,20 +378,18 @@
     <section class="hero">
         <h1>المدرسة القرآنية <br><span>دلائل الخير</span></h1>
         <p>صرح علمي وتربوي يسعى إلى إخراج جيل حافظ لكتاب الله، متمسك بسنة نبيه، متخلق بأخلاق الإسلام.</p>
-        
+       
         <div class="btn-group">
-            <a href="#" class="btn btn-student">
-                <i class="fa-brands fa-google"></i>
-                دخول كطالب
+            <a href="#" id="studentLoginBtn" class="btn btn-student">
+                <i class="fa-solid fa-user-graduate"></i> دخول كطالب
             </a>
-            <a href="#" class="btn btn-admin">
-                <i class="fa-solid fa-user-shield"></i>
-                دخول الإدارة
+            <a href="#" id="heroAdminBtn" class="btn btn-admin">
+                <i class="fa-solid fa-user-shield"></i> دخول الإدارة
             </a>
         </div>
     </section>
 
-    <section class="features">
+    <section class="features" id="features">
         <div class="section-title">
             <h2>لماذا تختار مدرستنا؟</h2>
             <div class="line"></div>
@@ -410,28 +423,7 @@
             <h2>أحدث الأخبار والإعلانات</h2>
             <div class="line"></div>
         </div>
-        <div class="news-grid" id="news-grid">
-            <div class="news-card">
-                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aaab31f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <span class="news-date">15 ماي 2026</span>
-                </div>
-                <div class="news-content">
-                    <h3>إعلان عن بدء التسجيل للدورة الصيفية</h3>
-                    <p>تعلن المدرسة القرآنية دلائل الخير عن فتح باب التسجيل للدورة الصيفية المكثفة لحفظ القرآن الكريم ومراجعة المتون العلمية.</p>
-                    <a href="#" class="read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-            </div>
-            <div class="news-card">
-                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1585036156171-384164a8c675?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <span class="news-date">02 ماي 2026</span>
-                </div>
-                <div class="news-content">
-                    <h3>حفل تكريم حفظة كتاب الله</h3>
-                    <p>بفضل الله ومنته، تم تكريم كوكبة جديدة من حفظة كتاب الله تعالى في حفل بهيج حضره أولياء الأمور وجمع من المشايخ.</p>
-                    <a href="#" class="read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-            </div>
-        </div>
+        <div class="news-grid" id="news-grid"></div>
     </section>
 
     <footer>
@@ -447,8 +439,8 @@
                 <h3>روابط سريعة</h3>
                 <ul>
                     <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#quran">القرآن الكريم</a></li>
-                    <li><a href="#hadith">الأحاديث النبوية</a></li>
+                    <li><a href="#features">عن المدرسة</a></li>
+                    <li><a href="#news">الأخبار والإعلانات</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -457,8 +449,7 @@
                     <li style="color: #94a3b8; margin-bottom: 20px;"><i class="fa-solid fa-phone"></i> 37 07 09 0668</li>
                     <li>
                         <a href="https://www.facebook.com/share/18MGVtRH3i/" target="_blank" class="fb-btn">
-                            <i class="fa-brands fa-facebook"></i>
-                            زيارة صفحتنا على الفيسبوك
+                            <i class="fa-brands fa-facebook"></i> زيارة صفحتنا على الفيسبوك
                         </a>
                     </li>
                 </ul>
@@ -467,15 +458,90 @@
         <div class="copyright">
             جميع الحقوق محفوظة © 2026 - المدرسة القرآنية دلائل الخير
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 جميع الحقوق محفوظة لـ مدرسة دلائل الخير</p>
+            <a href="#" id="adminLoginBtn" style="color: var(--text-gray); font-size: 0.9rem; text-decoration: none;">لوحة التحكم</a>
+        </div>
     </footer>
-<!-- --- Firebase Configuration & Initialization --- -->
-    <script type="module">
-        // 1. Import the core Firebase SDK and the specific modules we actually need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // 2. Your web app's Firebase configuration
+    <div id="studentAuthModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; direction: rtl; position: relative;">
+            <span id="closeStudentAuthBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
+            <h3 id="studentModalTitle" style="margin-bottom: 20px; color: var(--primary); text-align: center;">تسجيل دخول الطلاب</h3>
+           
+            <form id="studentAuthForm">
+                <div id="studentNameGroup" style="margin-bottom: 15px; display: none;">
+                    <label style="display:block; margin-bottom:5px; font-weight: 600;">الاسم الكامل:</label>
+                    <input type="text" id="studentName" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight: 600;">البريد الإلكتروني:</label>
+                    <input type="email" id="studentEmail" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:5px; font-weight: 600;">كلمة المرور:</label>
+                    <input type="password" id="studentPassword" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <button type="submit" id="studentSubmitBtn" style="width:100%; padding: 12px; background: var(--primary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold; margin-bottom: 15px;">دخول</button>
+               
+                <div style="text-align: center;">
+                    <a href="#" id="toggleStudentMode" style="color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: bold;">ليس لديك حساب؟ إنشاء حساب جديد</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="authModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; direction: rtl; position: relative;">
+            <span id="closeAuthBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
+            <h3 style="margin-bottom: 20px; color: var(--primary); text-align: center;">تسجيل دخول الإدارة</h3>
+            <form id="loginForm">
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px;">البريد الإلكتروني:</label>
+                    <input type="email" id="adminEmail" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:5px;">كلمة المرور:</label>
+                    <input type="password" id="adminPassword" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <button type="submit" style="width:100%; padding: 12px; background: var(--primary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">دخول</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboardModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 550px; direction: rtl; position: relative; max-height: 90vh; overflow-y: auto;">
+            <span id="closeDashBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
+            <h3 style="margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px;">لوحة النشر وإدارة المحتوى</h3>
+           
+            <form id="publishForm">
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">عنوان الإعلان:</label>
+                    <input type="text" id="postTitle" required placeholder="مثال: فتح باب التسجيل للدورة الصيفية" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">رابط صورة الإعلان (اختياري):</label>
+                    <input type="url" id="postImage" placeholder="https://example.com/image.jpg" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; direction: ltr; text-align: left;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">محتوى الإعلان:</label>
+                    <textarea id="postContent" required rows="5" placeholder="اكتب تفاصيل الإعلان هنا للطلاب..." style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; resize: vertical;"></textarea>
+                </div>
+               
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" style="flex: 2; padding: 12px; background: var(--secondary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">نشر الإعلان الآن</button>
+                    <button type="button" id="logoutBtn" style="flex: 1; padding: 12px; background: #ef4444; color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">خروج</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // إعدادات مشروع Firebase الخاص بك
         const firebaseConfig = {
             apiKey: "AIzaSyBIlmZXAVQ0RGS1BL_tbfyUjUKZYD9d3rY",
             authDomain: "dalail-alkhayr.firebaseapp.com",
@@ -486,16 +552,262 @@
             measurementId: "G-0JX7XE0XT1"
         };
 
-        // 3. Initialize Firebase
+        // تهيئة Firebase
         const app = initializeApp(firebaseConfig);
-        
-        // 4. Initialize our backend services so we can use them across the site
         const auth = getAuth(app);
         const db = getFirestore(app);
 
-        // Confirmation log for our testing phase
-        console.log("Firebase has successfully connected to Dalail Al-Khair!");
+        // --- بريد الإدارة الرسمي للحماية ---
+        const ADMIN_EMAIL = "dduckyounes@gmail.com"; // يمكنك تغيير هذا البريد بأي بريد إدارة تريده
+
+        console.log("Firebase Modular SDK connected successfully!");
+
+        // مراقبة الجلسة وحالة المستخدم
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log("المستخدم الحالي مسجل الدخول باسم:", user.displayName || user.email);
+            } else {
+                console.log("لا يوجد مستخدم نشط حالياً.");
+            }
+        });
+
+        // جلب الأخبار من Firestore
+        function loadLiveNews() {
+            const newsGrid = document.getElementById('news-grid');
+            const q = query(collection(db, 'news'), orderBy('createdAt', 'desc'));
+           
+            onSnapshot(q, (snapshot) => {
+                newsGrid.innerHTML = '';
+               
+                if (snapshot.empty) {
+                    newsGrid.innerHTML = '<p style="text-align: center; color: var(--text-gray); width: 100%; grid-column: 1/-1;">لا توجد أخبار أو إعلانات حالياً.</p>';
+                    return;
+                }
+
+                snapshot.forEach((doc) => {
+                    const newsItem = doc.data();
+                    let displayDate = "تاريخ غير محدد";
+                   
+                    if (newsItem.createdAt && typeof newsItem.createdAt.toDate === 'function') {
+                        displayDate = newsItem.createdAt.toDate().toLocaleDateString('ar-DZ', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        });
+                    }
+
+                    newsGrid.innerHTML += `
+                        <div class="news-card">
+                            <div class="news-img" style="background-image: url('${newsItem.imageUrl || 'https://images.unsplash.com/photo-1609599006353-e629aaab31f5?auto=format&fit=crop&w=800&q=80'}');">
+                                <span class="news-date">${displayDate}</span>
+                            </div>
+                            <div class="news-content">
+                                <h3>${newsItem.title || 'بدون عنوان'}</h3>
+                                <p>${newsItem.content || ''}</p>
+                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    `;
+                });
+            }, (error) => {
+                console.error("Error fetching news:", error);
+                newsGrid.innerHTML = '<p style="text-align: center; color: red; width: 100%;">حدث خطأ أثناء تحميل الأخبار.</p>';
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', loadLiveNews);
+
+        // التحكم بالنوافذ المنبثقة وحماية الإدارة
+        const adminLoginBtn = document.getElementById('adminLoginBtn');
+        const heroAdminBtn = document.getElementById('heroAdminBtn');
+        const authModal = document.getElementById('authModal');
+        const dashboardModal = document.getElementById('dashboardModal');
+        const closeAuthBtn = document.getElementById('closeAuthBtn');
+        const closeDashBtn = document.getElementById('closeDashBtn');
+
+        const handleAdminAccess = (e) => {
+            e.preventDefault();
+            if (auth.currentUser) {
+                if (auth.currentUser.email === ADMIN_EMAIL) {
+                    dashboardModal.style.display = 'flex';
+                } else {
+                    alert("خطأ في الصلاحيات: الحساب الحالي مسجل كطالب. يرجى تسجيل الدخول بحساب الإدارة.");
+                }
+            } else {
+                authModal.style.display = 'flex';
+            }
+        };
+
+        adminLoginBtn.addEventListener('click', handleAdminAccess);
+        heroAdminBtn.addEventListener('click', handleAdminAccess);
+
+        closeAuthBtn.addEventListener('click', () => authModal.style.display = 'none');
+        closeDashBtn.style.cursor = 'pointer';
+        closeDashBtn.addEventListener('click', () => dashboardModal.style.display = 'none');
+
+        // تسجيل دخول المسؤول
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+
+            if (email !== ADMIN_EMAIL) {
+                alert("البريد الإلكتروني المدخل ليس حساب الإدارة المعين.");
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    authModal.style.display = 'none';
+                    dashboardModal.style.display = 'flex';
+                    loginForm.reset();
+                })
+                .catch((error) => {
+                    console.error("Login failure:", error);
+                    alert("خطأ في تسجيل الدخول: تحقق من صحة البيانات المدخلة.");
+                });
+        });
+
+        // إضافة إعلان جديد وإرسال بريد تلقائي مأمن
+        const publishForm = document.getElementById('publishForm');
+        publishForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!auth.currentUser || auth.currentUser.email !== ADMIN_EMAIL) {
+                alert("عملية غير مصرح بها. هذه اللوحة مخصصة للمسؤول فقط.");
+                return;
+            }
+
+            const title = document.getElementById('postTitle').value;
+            const imageUrl = document.getElementById('postImage').value;
+            const content = document.getElementById('postContent').value;
+
+            addDoc(collection(db, 'news'), {
+                title: title,
+                imageUrl: imageUrl,
+                content: content,
+                createdAt: serverTimestamp()
+            })
+            .then(() => {
+                const templateParams = {
+                    news_title: title,
+                    news_content: content
+                };
+
+                if (window.emailjs) {
+                    window.emailjs.send("service_rdi2d9g", "template_isgnte4", templateParams)
+                        .then(() => {
+                            console.log("Notification email dispatched dynamically via EmailJS!");
+                        })
+                        .catch((err) => {
+                            console.error("EmailJS execution failed:", err);
+                        });
+                }
+
+                alert("تم نشر الإعلان بنجاح وإرسال البريد الإلكتروني التلقائي للطلاب!");
+                publishForm.reset();
+                dashboardModal.style.display = 'none';
+            })
+            .catch((error) => {
+                console.error("Firestore write failure:", error);
+                alert("حدث خطأ أثناء النشر: تحقق من صلاحيات قواعد البيانات الخاصة بك.");
+            });
+        });
+
+        // تسجيل الخروج الآمن للمسؤول
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                dashboardModal.style.display = 'none';
+                alert("تم تسجيل الخروج بنظام آمن.");
+            });
+        });
+
+        // إدارة بوابات وحسابات الطلاب
+        const studentLoginBtn = document.getElementById('studentLoginBtn');
+        const studentAuthModal = document.getElementById('studentAuthModal');
+        const closeStudentAuthBtn = document.getElementById('closeStudentAuthBtn');
+        const toggleStudentMode = document.getElementById('toggleStudentMode');
+        const studentAuthForm = document.getElementById('studentAuthForm');
+
+        const studentModalTitle = document.getElementById('studentModalTitle');
+        const studentNameGroup = document.getElementById('studentNameGroup');
+        const studentNameInput = document.getElementById('studentName');
+        const studentSubmitBtn = document.getElementById('studentSubmitBtn');
+
+        let isSignUpMode = false;
+
+        studentLoginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            studentAuthModal.style.display = 'flex';
+        });
+
+        closeStudentAuthBtn.addEventListener('click', () => {
+            studentAuthModal.style.display = 'none';
+            studentAuthForm.reset();
+            resetStudentModalMode();
+        });
+
+        toggleStudentMode.addEventListener('click', (e) => {
+            e.preventDefault();
+            isSignUpMode = !isSignUpMode;
+           
+            if (isSignUpMode) {
+                studentModalTitle.innerText = "إنشاء حساب طالب جديد";
+                studentNameGroup.style.display = "block";
+                studentNameInput.required = true;
+                studentSubmitBtn.innerText = "تسجيل حساب جديد";
+                toggleStudentMode.innerText = "لديك حساب بالفعل? تسجيل الدخول";
+            } else {
+                resetStudentModalMode();
+            }
+        });
+
+        function resetStudentModalMode() {
+            isSignUpMode = false;
+            studentModalTitle.innerText = "تسجيل دخول الطلاب";
+            studentNameGroup.style.display = "none";
+            studentNameInput.required = false;
+            studentSubmitBtn.innerText = "دخول";
+            toggleStudentMode.innerText = "ليس لديك حساب؟ إنشاء حساب جديد";
+        }
+
+        studentAuthForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('studentEmail').value;
+            const password = document.getElementById('studentPassword').value;
+
+            if (isSignUpMode) {
+                const fullName = studentNameInput.value;
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        return updateProfile(userCredential.user, {
+                            displayName: fullName
+                        });
+                    })
+                    .then(() => {
+                        alert("تم إنشاء حسابك كطالب بنجاح ومرحباً بك في مدرسة دلائل الخير!");
+                        studentAuthModal.style.display = 'none';
+                        studentAuthForm.reset();
+                        resetStudentModalMode();
+                    })
+                    .catch((error) => {
+                        console.error("Student registration error:", error);
+                        alert("خطأ أثناء إنشاء الحساب: البريد مستخدم بالفعل أو كلمة المرور ضعيفة.");
+                    });
+            } else {
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        alert(`مرحباً بك مجدداً يا ${userCredential.user.displayName || 'طالبنا العزيز'}! تم تسجيل الدخول بنجاح.`);
+                        studentAuthModal.style.display = 'none';
+                        studentAuthForm.reset();
+                    })
+                    .catch((error) => {
+                        console.error("Student login error:", error);
+                        alert("خطأ في تسجيل الدخول: يرجى التحقق من صحة البيانات المدخلة.");
+                    });
+            }
+        });
     </script>
-    <script type="module" src="firebase-config.js"></script>
 </body>
 </html>
