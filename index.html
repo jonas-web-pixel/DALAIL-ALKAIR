@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <title>المدرسة القرآنية دلائل الخير | بوابة الطالب</title>
+    <title>المدرسة القرآنية دلائل الخير | بوابة الدخول</title>
+    <meta name="description" content="البوابة الإلكترونية الرسمية للمدرسة القرآنية دلائل الخير. تابع حلقات حفظ القرآن الكريم، التجويد، المتون العلمية، وآخر الأخبار والإعلانات المدرسية في فضاء تفاعلي متكامل.">
+    <meta name="keywords" content="مدرسة دلائل الخير, المدرسة القرآنية, حفظ القرآن, التجويد, المتون, الجزائر, تعليم قرآني">
+    <meta name="author" content="مدرسة دلائل الخير">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="المدرسة القرآنية دلائل الخير | بوابة الدخول">
+    <meta property="og:description" content="تابع حلقات حفظ القرآن الكريم، التجويد، وآخر الإعلانات المدرسية في فضاء تفاعلي متكامل.">
+    <meta property="og:image" content="logo.jpg">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-          emailjs.init("k51-024S84tmm6yFk"); // مفتاحك العام مدمج وجاهز هنا
+          emailjs.init("k51-024S84tmm6yFk");
        })();
     </script>
    
@@ -36,124 +45,221 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        /* --- Header & Nav --- */
+        /* --- 1. WELCOME GATE SCREEN --- */
+        #welcomeGate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--primary-dark);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230a7a66' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            padding: 20px;
+        }
+
+        .gate-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        .gate-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 3px;
+            margin-bottom: 15px;
+        }
+
+        .gate-card h2 {
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+        }
+
+        .gate-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .gate-tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            gap: 5px;
+        }
+
+        .gate-tab-btn {
+            flex: 1;
+            padding: 10px 5px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--text-gray);
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .gate-tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .gate-form-group {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        .gate-form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .gate-form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .gate-form-group input:focus {
+            border-color: var(--primary);
+        }
+
+        .gate-submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .gate-submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* --- 2. MAIN PORTAL HOUSING --- */
+        #mainAppPortal {
+            display: none;
+        }
+
         header {
             background-color: white;
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: all 0.3s ease;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .site-logo {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
             border-radius: 50%;
-            border: 2px solid var(--primary);
-            padding: 2px;
-        }
-
-        .logo-container h2 {
-            color: var(--primary-dark);
-            font-size: 1.2rem;
-            font-weight: 800;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 12px;
+            align-items: center;
         }
 
         nav a {
             color: var(--text-gray);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 700;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            background-color: var(--primary-dark);
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230a7a66' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: white;
-            padding: 100px 5%;
-            text-align: center;
-            border-bottom: 5px solid var(--secondary);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-       
-        .hero h1 span {
-            color: var(--secondary);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            color: #d1fae5;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 30px;
+            padding: 10px 16px;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
             cursor: pointer;
+            font-size: 0.95rem;
         }
 
-        .btn-student {
-            background-color: white;
-            color: var(--primary-dark);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        nav a.active-nav {
+            color: var(--primary);
+            background: #e6f4f1;
         }
 
-        .btn-admin {
-            background-color: transparent;
+        .logout-nav-btn {
+            color: #ef4444;
+            background: #fff5f5;
+        }
+        .logout-nav-btn:hover {
+            background: #fef2f2;
+        }
+
+        /* --- PAGE VIEWS SYSTEM --- */
+        .page-view {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        .page-view.active-view {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Inner Hero style */
+        .portal-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
-            border: 2px solid white;
+            padding: 50px 5%;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--secondary);
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
+        .portal-container {
+            padding: 0 5% 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* --- Section Titles --- */
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -161,6 +267,7 @@
         .section-title h2 {
             font-size: 2rem;
             color: var(--primary-dark);
+            font-weight: 800;
         }
         .section-title .line {
             width: 80px;
@@ -170,77 +277,54 @@
             border-radius: 2px;
         }
 
-        /* --- Features Section --- */
-        .features {
-            padding: 80px 5%;
-            background: white;
-        }
-
-        .features-grid {
+        /* Features/Grid structures */
+        .features-grid, .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .feature-card {
-            background: var(--bg-light);
-            padding: 30px;
+            background: white;
+            padding: 35px 25px;
             border-radius: 15px;
             text-align: center;
             border: 1px solid #e2e8f0;
-            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
         }
-
         .feature-card:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transform: translateY(-5px);
-            border-color: var(--secondary);
         }
 
         .icon-box {
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             background: #d1fae5;
             color: var(--primary);
-            border-radius: 15px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             margin: 0 auto 20px auto;
-            transform: rotate(3deg);
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover .icon-box {
-            background: var(--primary);
-            color: white;
-            transform: rotate(6deg);
-        }
-
-        /* --- News Section --- */
-        .news {
-            padding: 80px 5%;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
         }
 
         .news-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
+            transition: transform 0.3s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
         }
 
         .news-img {
             width: 100%;
-            height: 200px;
-            background-color: #cbd5e1;
+            height: 220px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -252,296 +336,319 @@
             right: 15px;
             background: white;
             color: var(--primary-dark);
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .news-content {
-            padding: 20px;
+            padding: 25px;
         }
 
-        .news-content h3 {
-            color: var(--primary-dark);
-            margin-bottom: 10px;
+        /* Quran Section Styling */
+        .quran-placeholder {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 30px;
+            text-align: center;
+            border: 2px dashed #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .news-content p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .read-more {
+        .quran-placeholder i {
+            font-size: 4rem;
             color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
-        /* --- Footer & Facebook Button --- */
+        /* Floating Admin Trigger Button */
+        #adminControlBtn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #2563eb;
+            color: white;
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.4);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        #adminControlBtn:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* Modals style */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 550px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
         footer {
             background-color: #0f172a;
             color: #94a3b8;
-            padding: 60px 5% 20px 5%;
+            padding: 30px 5%;
+            text-align: center;
             border-top: 4px solid var(--primary);
+            font-size: 0.95rem;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+                text-align: center;
+            }
 
-        .footer-col h3 {
-            color: white;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
+            .logo-container {
+                flex-direction: column;
+                gap: 6px;
+            }
 
-        .footer-col ul {
-            list-style: none;
-        }
+            nav {
+                width: 100%;
+            }
 
-        .footer-col ul li {
-            margin-bottom: 15px;
-        }
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
 
-        .footer-col ul li a:not(.fb-btn) {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+            nav a {
+                padding: 10px 12px;
+                font-size: 0.85rem;
+                gap: 6px;
+                flex: 1 1 auto;
+                justify-content: center;
+            }
 
-        .footer-col ul li a:not(.fb-btn):hover {
-            color: var(--secondary);
-        }
+            .portal-hero {
+                padding: 40px 20px;
+            }
 
-        .fb-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: #1877F2;
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+            .portal-hero h1 {
+                font-size: 1.8rem;
+            }
 
-        .fb-btn:hover {
-            background-color: #166fe5;
-            transform: translateY(-3px);
-        }
+            .portal-container {
+                padding: 0 4% 100px 4%;
+            }
 
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-            font-size: 0.9rem;
-        }
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
 
-        .footer-bottom {
-            text-align: center;
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            .features-grid, .news-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #adminControlBtn {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                width: calc(100% - 40px);
+                justify-content: center;
+                border-radius: 12px;
+                padding: 14px;
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="شعار المدرسة" class="site-logo">
-            <h2>مدرسة دلائل الخير</h2>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
-                <li><a href="#features"><i class="fa-solid fa-book-quran"></i> عن المدرسة</a></li>
-                <li><a href="#news"><i class="fa-solid fa-newspaper"></i> الأخبار</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>المدرسة القرآنية <br><span>دلائل الخير</span></h1>
-        <p>صرح علمي وتربوي يسعى إلى إخراج جيل حافظ لكتاب الله، متمسك بسنة نبيه، متخلق بأخلاق الإسلام.</p>
-       
-        <div class="btn-group">
-            <a href="#" id="studentLoginBtn" class="btn btn-student">
-                <i class="fa-solid fa-user-graduate"></i> دخول كطالب
-            </a>
-            <a href="#" id="heroAdminBtn" class="btn btn-admin">
-                <i class="fa-solid fa-user-shield"></i> دخول الإدارة
-            </a>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="section-title">
-            <h2>لماذا تختار مدرستنا؟</h2>
-            <div class="line"></div>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="icon-box"><i class="fa-solid fa-book-quran"></i></div>
-                <h3>تحفيظ القرآن</h3>
-                <p>برامج متخصصة لحفظ القرآن الكريم بأحكام التجويد لجميع الفئات العمرية.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
-                <h3>المتون العلمية</h3>
-                <p>حفظ ودراسة المتون العلمية الأساسية كالأربعين النووية وغيرها.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-                <h3>متابعة مستمرة</h3>
-                <p>نظام متابعة إلكتروني يتيح للأولياء والطلبة متابعة مستوى التقدم.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon-box"><i class="fa-solid fa-star-and-crescent"></i></div>
-                <h3>تربية إسلامية</h3>
-                <p>غرس القيم والأخلاق الإسلامية المستمدة من سيرة النبي ﷺ.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="news" id="news">
-        <div class="section-title">
-            <h2>أحدث الأخبار والإعلانات</h2>
-            <div class="line"></div>
-        </div>
-        <div class="news-grid" id="news-grid"></div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo-container" style="margin-bottom: 15px;">
-                    <img src="logo.jpg" alt="شعار المدرسة" class="site-logo" style="width: 40px; height: 40px;">
-                    <h3 style="margin: 0; border: none; color: white;">دلائل الخير</h3>
-                </div>
-                <p>نسعى إلى إخراج عدد كبير من الحفاظ لكتاب الله بإذن الله، وتعليمهم المتون العلمية والأخلاق الإسلامية.</p>
-            </div>
-            <div class="footer-col">
-                <h3>روابط سريعة</h3>
-                <ul>
-                    <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#features">عن المدرسة</a></li>
-                    <li><a href="#news">الأخبار والإعلانات</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>تواصل معنا</h3>
-                <ul>
-                    <li style="color: #94a3b8; margin-bottom: 20px;"><i class="fa-solid fa-phone"></i> 37 07 09 0668</li>
-                    <li>
-                        <a href="https://www.facebook.com/share/18MGVtRH3i/" target="_blank" class="fb-btn">
-                            <i class="fa-brands fa-facebook"></i> زيارة صفحتنا على الفيسبوك
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            جميع الحقوق محفوظة © 2026 - المدرسة القرآنية دلائل الخير
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 جميع الحقوق محفوظة لـ مدرسة دلائل الخير</p>
-            <a href="#" id="adminLoginBtn" style="color: var(--text-gray); font-size: 0.9rem; text-decoration: none;">لوحة التحكم</a>
-        </div>
-    </footer>
-
-    <div id="studentAuthModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
-        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; direction: rtl; position: relative;">
-            <span id="closeStudentAuthBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
-            <h3 id="studentModalTitle" style="margin-bottom: 20px; color: var(--primary); text-align: center;">تسجيل دخول الطلاب</h3>
+    <div id="welcomeGate">
+        <div class="gate-card">
+            <img src="logo.jpg" alt="Logo" class="gate-logo">
+            <h2 id="gateTitle">بوابة مدرسة دلائل الخير</h2>
+            <p id="gateSubtitle">يرجى تسجيل الدخول للوصول إلى الحساب القرآني والخدمات المدرسية</p>
            
-            <form id="studentAuthForm">
-                <div id="studentNameGroup" style="margin-bottom: 15px; display: none;">
-                    <label style="display:block; margin-bottom:5px; font-weight: 600;">الاسم الكامل:</label>
-                    <input type="text" id="studentName" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+            <div class="gate-tabs">
+                <button type="button" class="gate-tab-btn active" id="tabStudentLogin">دخول الطلاب</button>
+                <button type="button" class="gate-tab-btn" id="tabStudentRegister">حساب جديد</button>
+                <button type="button" class="gate-tab-btn" id="tabAdminLogin">لوحة الإدارة</button>
+            </div>
+
+            <form id="gateAuthForm">
+                <div class="gate-form-group" id="gateNameGroup" style="display: none;">
+                    <label>الاسم الكامل للطالب:</label>
+                    <input type="text" id="gateName" placeholder="محمد بن أحمد">
                 </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; margin-bottom:5px; font-weight: 600;">البريد الإلكتروني:</label>
-                    <input type="email" id="studentEmail" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display:block; margin-bottom:5px; font-weight: 600;">كلمة المرور:</label>
-                    <input type="password" id="studentPassword" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
-                </div>
-                <button type="submit" id="studentSubmitBtn" style="width:100%; padding: 12px; background: var(--primary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold; margin-bottom: 15px;">دخول</button>
                
-                <div style="text-align: center;">
-                    <a href="#" id="toggleStudentMode" style="color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: bold;">ليس لديك حساب؟ إنشاء حساب جديد</a>
+                <div class="gate-form-group">
+                    <label>البريد الإلكتروني:</label>
+                    <input type="email" id="gateEmail" required placeholder="name@example.com">
                 </div>
+               
+                <div class="gate-form-group">
+                    <label>كلمة المرور:</label>
+                    <input type="password" id="gatePassword" required placeholder="••••••••">
+                </div>
+
+                <div style="text-align: left; margin-top: -10px; margin-bottom: 20px;" id="forgotPasswordContainer">
+                    <span id="forgotPasswordBtn" style="color: var(--primary); cursor: pointer; font-size: 0.85rem; font-weight: bold; transition: color 0.3s;">نسيت كلمة المرور؟</span>
+                </div>
+               
+                <button type="submit" class="gate-submit-btn" id="gateSubmitBtn">تسجيل الدخول</button>
             </form>
         </div>
     </div>
 
-    <div id="authModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
-        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; direction: rtl; position: relative;">
-            <span id="closeAuthBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
-            <h3 style="margin-bottom: 20px; color: var(--primary); text-align: center;">تسجيل دخول الإدارة</h3>
-            <form id="loginForm">
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; margin-bottom:5px;">البريد الإلكتروني:</label>
-                    <input type="email" id="adminEmail" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+
+    <div id="mainAppPortal">
+        
+        <header>
+            <div class="logo-container">
+                <img src="logo.jpg" alt="شعار" class="site-logo">
+                <div>
+                    <h2 style="font-size:1.1rem; font-weight:800;">مدرسة دلائل الخير</h2>
+                    <span id="userGreetingLabel" style="font-size:0.85rem; color:var(--primary); font-weight:bold;">مرحباً: <span id="userGreetingName">...</span></span>
+                    <span id="adminViewLabel" style="display:none; background:#2563eb; color:white; padding:2px 8px; font-size:0.75rem; border-radius:4px; margin-right:5px; font-weight:bold;">مسؤول الإدارة</span>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display:block; margin-bottom:5px;">كلمة المرور:</label>
-                    <input type="password" id="adminPassword" required style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
-                </div>
-                <button type="submit" style="width:100%; padding: 12px; background: var(--primary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">دخول</button>
-            </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class="nav-link active-nav" data-target="viewHome"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+                    <li><a class="nav-link" data-target="viewQuran"><i class="fa-solid fa-book-quran"></i> المصحف</a></li>
+                    <li><a class="nav-link" data-target="viewNews"><i class="fa-solid fa-newspaper"></i> الأخبار</a></li>
+                    <li><a class="logout-nav-btn" id="headerLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> خروج</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="portal-hero">
+            <h1 style="font-weight:800; margin-bottom:10px;">بوابة الطالب والتعليم التفاعلي</h1>
+            <p style="color:#d1fae5;">مرحباً بك في فضائك التعليمي المخصص لمتابعة الحفظ، التجويد، وآخر مستجدات المدرسة.</p>
         </div>
+
+        <div class="portal-container">
+            
+            <div id="viewHome" class="page-view active-view">
+                <div class="section-title">
+                    <h2>عن المدرسة القرآنية</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fa-solid fa-book-open-reader"></i></div>
+                        <h3 style="margin-bottom:10px; font-weight:700;">تحفيظ متقن</h3>
+                        <p style="color:var(--text-gray); font-size:0.95rem;">توفير بيئة تعليمية هادفة لحفظ القرآن بالتجويد والترتيل على أيدي مشايخ معتمدين.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
+                        <h3 style="margin-bottom:10px; font-weight:700;">المتون والمتعلقات</h3>
+                        <p style="color:var(--text-gray); font-size:0.95rem;">دراسة وحفظ المتون الفقهية والحديثية واللغوية لبناء ركيزة علمية شرعية صلبة.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fa-solid fa-star-and-crescent"></i></div>
+                        <h3 style="margin-bottom:10px; font-weight:700;">القيم والأخلاق</h3>
+                        <p style="color:var(--text-gray); font-size:0.95rem;">برامج تربوية موازية تهدف لغرس قيم القرآن الكريم وآدابه السامية في المعاملات اليومية.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="viewQuran" class="page-view">
+                <div class="section-title">
+                    <h2>المصحف التفاعلي وحلقات الحفظ</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="quran-placeholder">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <h3 style="font-weight:700;">قسم متابعة وتسميع القرآن الكريم</h3>
+                    <p style="color:var(--text-gray); margin-top:10px; font-size:0.95rem;">يجري العمل حالياً على بناء لوحة تسميع تفاعلية لمتابعة ورشات وعلامات الحفظ اليومي الخاص بكل طالب بالتنسيق مع شيخ الحلقة تلقائياً.</p>
+                </div>
+            </div>
+
+            <div id="viewNews" class="page-view">
+                <div class="section-title">
+                    <h2>آخر الإعلانات والمستجدات الرسمية</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="news-grid" id="news-grid"></div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>جميع الحقوق محفوظة © 2026 - المدرسة القرآنية دلائل الخير</p>
+        </footer>
+
+        <button id="adminControlBtn"><i class="fa-solid fa-gears"></i> إدارة المحتوى والإعلانات</button>
+
     </div>
 
-    <div id="dashboardModal" class="admin-modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
-        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 550px; direction: rtl; position: relative; max-height: 90vh; overflow-y: auto;">
+    <div id="dashboardModal" class="admin-modal">
+        <div class="modal-content">
             <span id="closeDashBtn" style="position: absolute; top: 10px; left: 15px; cursor: pointer; font-size: 1.5rem; color: #999;">&times;</span>
-            <h3 style="margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px;">لوحة النشر وإدارة المحتوى</h3>
+            <h3 id="dashboardTitle" style="margin-bottom:20px; color:var(--primary); border-bottom:2px solid #eee; padding-bottom:10px; font-weight:800;">إدارة ونشر محتوى الأخبار</h3>
            
             <form id="publishForm">
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">عنوان الإعلان:</label>
-                    <input type="text" id="postTitle" required placeholder="مثال: فتح باب التسجيل للدورة الصيفية" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                <div class="gate-form-group">
+                    <label style="font-weight:bold;">عنوان الإعلان:</label>
+                    <input type="text" id="postTitle" required placeholder="عنوان الخبر...">
                 </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">رابط صورة الإعلان (اختياري):</label>
-                    <input type="url" id="postImage" placeholder="https://example.com/image.jpg" style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; direction: ltr; text-align: left;">
+                <div class="gate-form-group">
+                    <label style="font-weight:bold;">رابط صورة الإعلان (اختياري):</label>
+                    <input type="url" id="postImage" placeholder="https://example.com/image.jpg" style="direction: ltr; text-align: left;">
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">محتوى الإعلان:</label>
-                    <textarea id="postContent" required rows="5" placeholder="اكتب تفاصيل الإعلان هنا للطلاب..." style="width:100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; resize: vertical;"></textarea>
+                <div class="gate-form-group">
+                    <label style="font-weight:bold;">محتوى الإعلان التفصيلي:</label>
+                    <textarea id="postContent" required rows="4" placeholder="اكتب تفاصيل المنشور هنا..." style="width:100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; resize: vertical; outline:none; font-size:1rem;"></textarea>
                 </div>
                
-                <div style="display: flex; gap: 10px;">
-                    <button type="submit" style="flex: 2; padding: 12px; background: var(--secondary); color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">نشر الإعلان الآن</button>
-                    <button type="button" id="logoutBtn" style="flex: 1; padding: 12px; background: #ef4444; color:#fff; border:none; border-radius: 6px; cursor:pointer; font-weight:bold;">خروج</button>
+                <div style="margin-bottom: 25px;">
+                    <button type="submit" id="publishSubmitBtn" class="gate-submit-btn" style="margin-top:0;">نشر الآن</button>
                 </div>
             </form>
+
+            <div id="adminNewsManagement" style="border-top: 2px solid #eee; padding-top: 20px; text-align:right;">
+                <h4 style="margin-bottom: 15px; color: var(--primary-dark); font-weight: 700;"><i class="fa-solid fa-list-check"></i> قائمة التعديل والحذف السريع</h4>
+                <div id="adminNewsList" style="display: flex; flex-direction: column; gap: 12px;"></div>
+            </div>
         </div>
     </div>
+
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-        import { getFirestore, collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, query, orderBy, onSnapshot, addDoc, serverTimestamp, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // إعدادات مشروع Firebase الخاص بك
         const firebaseConfig = {
             apiKey: "AIzaSyBIlmZXAVQ0RGS1BL_tbfyUjUKZYD9d3rY",
             authDomain: "dalail-alkhayr.firebaseapp.com",
@@ -552,47 +659,189 @@
             measurementId: "G-0JX7XE0XT1"
         };
 
-        // تهيئة Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
 
-        // --- بريد الإدارة الرسمي للحماية ---
-        const ADMIN_EMAIL = "dduckyounes@gmail.com"; // يمكنك تغيير هذا البريد بأي بريد إدارة تريده
+        // تم ربطه وتوحيده تلقائياً مع قواعد الأمان الخاصة بك ليعمل الحساب فوراً
+        const ADMIN_EMAIL = "dduckyounes@gmail.com"; 
 
-        console.log("Firebase Modular SDK connected successfully!");
+        let currentEditPostId = null;
+        let currentGateMode = "student-login"; 
 
-        // مراقبة الجلسة وحالة المستخدم
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log("المستخدم الحالي مسجل الدخول باسم:", user.displayName || user.email);
+        // --- GATE NAVIGATION / SWITCHING LOGIC ---
+        const tabStudentLogin = document.getElementById('tabStudentLogin');
+        const tabStudentRegister = document.getElementById('tabStudentRegister');
+        const tabAdminLogin = document.getElementById('tabAdminLogin');
+        const gateNameGroup = document.getElementById('gateNameGroup');
+        const gateNameInput = document.getElementById('gateName');
+        const gateSubmitBtn = document.getElementById('gateSubmitBtn');
+        const gateTitle = document.getElementById('gateTitle');
+        const forgotPasswordContainer = document.getElementById('forgotPasswordContainer');
+
+        function setGateMode(mode) {
+            currentGateMode = mode;
+            [tabStudentLogin, tabStudentRegister, tabAdminLogin].forEach(t => t.classList.remove('active'));
+            
+            if (mode === "student-login") {
+                tabStudentLogin.classList.add('active');
+                gateNameGroup.style.display = "none";
+                gateNameInput.required = false;
+                gateTitle.innerText = "تسجيل دخول الطلاب";
+                gateSubmitBtn.innerText = "تسجيل الدخول كطالب";
+                forgotPasswordContainer.style.display = "block"; // إظهار الزر عند محاولة الدخول
+            } else if (mode === "student-register") {
+                tabStudentRegister.classList.add('active');
+                gateNameGroup.style.display = "block";
+                gateNameInput.required = true;
+                gateTitle.innerText = "إنشاء حساب طالب جديد";
+                gateSubmitBtn.innerText = "إنشاء الحساب والانضمام";
+                forgotPasswordContainer.style.display = "none"; // إخفاءه عند إنشاء حساب جديد
+            } else if (mode === "admin-login") {
+                tabAdminLogin.classList.add('active');
+                gateNameGroup.style.display = "none";
+                gateNameInput.required = false;
+                gateTitle.innerText = "لوحة تحكم الإدارة";
+                gateSubmitBtn.innerText = "دخول المسؤول المعتمد";
+                forgotPasswordContainer.style.display = "block"; // إظهار الزر للإدارة أيضاً
+            }
+        }
+
+        tabStudentLogin.onclick = () => setGateMode("student-login");
+        tabStudentRegister.onclick = () => setGateMode("student-register");
+        tabAdminLogin.onclick = () => setGateMode("admin-login");
+
+        // --- تفعيل منطق إرسال بريد استعادة كلمة المرور التلقائي ---
+        document.getElementById('forgotPasswordBtn').onclick = () => {
+            const email = document.getElementById('gateEmail').value;
+            if (!email) {
+                alert("من فضلك، اكتب بريدك الإلكتروني أولاً في حقل البريد، ثم اضغط على 'نسيت كلمة المرور' ليتم إرسال الرابط إليك.");
+                return;
+            }
+            
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert("بشرى! تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني بنجاح. تفقد بريدك الوارد (أو صندوق الرسائل غير المرغوب فيها Spam).");
+                })
+                .catch((error) => {
+                    console.error("Error resetting password:", error);
+                    alert("عذراً، لم نتمكن من العثور على حساب مسجل بهذا البريد، أو أن الصيغة غير صحيحة.");
+                });
+        };
+
+        // --- INNER PORTAL TAB PAGES SYSTEM ---
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageViews = document.querySelectorAll('.page-view');
+
+        navLinks.forEach(link => {
+            link.onclick = (e) => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active-nav'));
+                pageViews.forEach(v => v.classList.remove('active-view'));
+                
+                link.classList.add('active-nav');
+                const targetViewId = link.getAttribute('data-target');
+                document.getElementById(targetViewId).classList.add('active-view');
+            };
+        });
+
+        // --- AUTH SUBMISSION LOGIC ---
+        const gateAuthForm = document.getElementById('gateAuthForm');
+        gateAuthForm.onsubmit = (e) => {
+            e.preventDefault();
+            const email = document.getElementById('gateEmail').value;
+            const password = document.getElementById('gatePassword').value;
+
+            if (currentGateMode === "admin-login" && email !== ADMIN_EMAIL) {
+                alert("البريد الإلكتروني المدخل ليس الحساب الرسمي المخصص لإدارة المدرسة.");
+                return;
+            }
+
+            if (currentGateMode === "student-register") {
+                const name = gateNameInput.value;
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((cred) => {
+                        return updateProfile(cred.user, { displayName: name });
+                    })
+                    .then(() => {
+                        alert("تم إنشاء حسابك بنجاح! أهلاً بك في مدرسة دلائل الخير.");
+                        gateAuthForm.reset();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("خطأ في التسجيل: البريد مستخدم بالفعل أو كلمة المرور ضعيفة جداً.");
+                    });
             } else {
-                console.log("لا يوجد مستخدم نشط حالياً.");
+                signInWithEmailAndPassword(auth, email, password)
+                    .then(() => {
+                        gateAuthForm.reset();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("خطأ في التحقق: يرجى التأكد من صحة البريد الإلكتروني وكلمة المرور.");
+                    });
+            }
+        };
+
+        // --- MONITOR AUTH STATE (GLOBAL SYSTEM ROUTER) ---
+        onAuthStateChanged(auth, (user) => {
+            const welcomeGate = document.getElementById('welcomeGate');
+            const mainAppPortal = document.getElementById('mainAppPortal');
+            const adminControlBtn = document.getElementById('adminControlBtn');
+            const adminViewLabel = document.getElementById('adminViewLabel');
+            const userGreetingName = document.getElementById('userGreetingName');
+
+            if (user) {
+                welcomeGate.style.display = 'none';
+                mainAppPortal.style.display = 'block';
+                userGreetingName.innerText = user.displayName || user.email;
+
+                if (user.email === ADMIN_EMAIL) {
+                    adminControlBtn.style.display = 'flex';
+                    adminViewLabel.style.display = 'inline-block';
+                } else {
+                    adminControlBtn.style.display = 'none';
+                    adminViewLabel.style.display = 'none';
+                }
+            } else {
+                welcomeGate.style.display = 'flex';
+                mainAppPortal.style.display = 'none';
+                setGateMode("student-login");
             }
         });
 
-        // جلب الأخبار من Firestore
+        // --- DISCONNECT / LOGOUT OPERATIONS ---
+        const handleLogout = () => {
+            signOut(auth).then(() => {
+                resetPublishForm();
+            });
+        };
+        document.getElementById('headerLogoutBtn').onclick = handleLogout;
+
+        // --- LIVE DATA: READ NEWS FROM FIRESTORE ---
         function loadLiveNews() {
             const newsGrid = document.getElementById('news-grid');
+            const adminNewsList = document.getElementById('adminNewsList');
             const q = query(collection(db, 'news'), orderBy('createdAt', 'desc'));
            
             onSnapshot(q, (snapshot) => {
                 newsGrid.innerHTML = '';
+                adminNewsList.innerHTML = '';
                
                 if (snapshot.empty) {
                     newsGrid.innerHTML = '<p style="text-align: center; color: var(--text-gray); width: 100%; grid-column: 1/-1;">لا توجد أخبار أو إعلانات حالياً.</p>';
+                    adminNewsList.innerHTML = '<p style="text-align: center; color: var(--text-gray); font-size: 0.9rem;">لا توجد منشوارات نشطة.</p>';
                     return;
                 }
 
-                snapshot.forEach((doc) => {
-                    const newsItem = doc.data();
+                snapshot.forEach((docSnap) => {
+                    const docId = docSnap.id;
+                    const newsItem = docSnap.data();
                     let displayDate = "تاريخ غير محدد";
                    
                     if (newsItem.createdAt && typeof newsItem.createdAt.toDate === 'function') {
                         displayDate = newsItem.createdAt.toDate().toLocaleDateString('ar-DZ', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
+                            day: 'numeric', month: 'long', year: 'numeric'
                         });
                     }
 
@@ -602,210 +851,117 @@
                                 <span class="news-date">${displayDate}</span>
                             </div>
                             <div class="news-content">
-                                <h3>${newsItem.title || 'بدون عنوان'}</h3>
-                                <p>${newsItem.content || ''}</p>
-                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                                <h3 style="color:var(--primary-dark); margin-bottom:10px; font-weight:700;">${newsItem.title || 'بدون عنوان'}</h3>
+                                <p style="color:var(--text-gray); font-size:0.95rem; white-space: pre-wrap;">${newsItem.content || ''}</p>
+                            </div>
+                        </div>
+                    `;
+
+                    adminNewsList.innerHTML += `
+                        <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; gap: 10px;">
+                            <span style="font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%;">${newsItem.title || 'بدون عنوان'}</span>
+                            <div style="display: flex; gap: 6px; flex-shrink: 0;">
+                                <button type="button" class="edit-news-btn" data-id="${docId}" data-title="${newsItem.title || ''}" data-image="${newsItem.imageUrl || ''}" data-content="${newsItem.content || ''}" style="padding: 8px 12px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;"><i class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="delete-news-btn" data-id="${docId}" style="padding: 8px 12px; background: #dc2626; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </div>
                     `;
                 });
-            }, (error) => {
-                console.error("Error fetching news:", error);
-                newsGrid.innerHTML = '<p style="text-align: center; color: red; width: 100%;">حدث خطأ أثناء تحميل الأخبار.</p>';
+
+                attachAdminActions();
             });
+        }
+
+        function attachAdminActions() {
+            document.querySelectorAll('.delete-news-btn').forEach(btn => {
+                btn.onclick = (e) => {
+                    const docId = e.currentTarget.getAttribute('data-id');
+                    if (confirm("هل أنت متأكد من حذف هذا الإعلان نهائياً؟")) {
+                        deleteDoc(doc(db, 'news', docId))
+                            .then(() => {
+                                alert("تم الحذف بنجاح.");
+                                if(currentEditPostId === docId) resetPublishForm();
+                            });
+                    }
+                };
+            });
+
+            document.querySelectorAll('.edit-news-btn').forEach(btn => {
+                btn.onclick = (e) => {
+                    const target = e.currentTarget;
+                    currentEditPostId = target.getAttribute('data-id');
+                    
+                    document.getElementById('postTitle').value = target.getAttribute('data-title');
+                    document.getElementById('postImage').value = target.getAttribute('data-image');
+                    document.getElementById('postContent').value = target.getAttribute('data-content');
+                    
+                    const submitBtn = document.getElementById('publishSubmitBtn');
+                    submitBtn.innerText = "حفظ التعديلات الحالية";
+                    submitBtn.style.background = "#2563eb";
+                    
+                    document.getElementById('dashboardModal').querySelector('.modal-content').scrollTop = 0;
+                };
+            });
+        }
+
+        function resetPublishForm() {
+            const publishForm = document.getElementById('publishForm');
+            if(publishForm) publishForm.reset();
+            currentEditPostId = null;
+            const submitBtn = document.getElementById('publishSubmitBtn');
+            if(submitBtn) {
+                submitBtn.innerText = "نشر الآن";
+                submitBtn.style.background = "var(--secondary)";
+            }
         }
 
         window.addEventListener('DOMContentLoaded', loadLiveNews);
 
-        // التحكم بالنوافذ المنبثقة وحماية الإدارة
-        const adminLoginBtn = document.getElementById('adminLoginBtn');
-        const heroAdminBtn = document.getElementById('heroAdminBtn');
-        const authModal = document.getElementById('authModal');
+        // --- DASHBOARD DISPLAY HANDLERS ---
         const dashboardModal = document.getElementById('dashboardModal');
-        const closeAuthBtn = document.getElementById('closeAuthBtn');
-        const closeDashBtn = document.getElementById('closeDashBtn');
-
-        const handleAdminAccess = (e) => {
-            e.preventDefault();
-            if (auth.currentUser) {
-                if (auth.currentUser.email === ADMIN_EMAIL) {
-                    dashboardModal.style.display = 'flex';
-                } else {
-                    alert("خطأ في الصلاحيات: الحساب الحالي مسجل كطالب. يرجى تسجيل الدخول بحساب الإدارة.");
-                }
-            } else {
-                authModal.style.display = 'flex';
-            }
+        document.getElementById('adminControlBtn').onclick = () => {
+            resetPublishForm();
+            dashboardModal.style.display = 'flex';
+        };
+        document.getElementById('closeDashBtn').onclick = () => {
+            dashboardModal.style.display = 'none';
+            resetPublishForm();
         };
 
-        adminLoginBtn.addEventListener('click', handleAdminAccess);
-        heroAdminBtn.addEventListener('click', handleAdminAccess);
-
-        closeAuthBtn.addEventListener('click', () => authModal.style.display = 'none');
-        closeDashBtn.style.cursor = 'pointer';
-        closeDashBtn.addEventListener('click', () => dashboardModal.style.display = 'none');
-
-        // تسجيل دخول المسؤول
-        const loginForm = document.getElementById('loginForm');
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('adminEmail').value;
-            const password = document.getElementById('adminPassword').value;
-
-            if (email !== ADMIN_EMAIL) {
-                alert("البريد الإلكتروني المدخل ليس حساب الإدارة المعين.");
-                return;
-            }
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then(() => {
-                    authModal.style.display = 'none';
-                    dashboardModal.style.display = 'flex';
-                    loginForm.reset();
-                })
-                .catch((error) => {
-                    console.error("Login failure:", error);
-                    alert("خطأ في تسجيل الدخول: تحقق من صحة البيانات المدخلة.");
-                });
-        });
-
-        // إضافة إعلان جديد وإرسال بريد تلقائي مأمن
+        // --- SUBMIT MANAGE NEWS (WRITE / UPDATE OPERATIONS) ---
         const publishForm = document.getElementById('publishForm');
         publishForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            if (!auth.currentUser || auth.currentUser.email !== ADMIN_EMAIL) {
-                alert("عملية غير مصرح بها. هذه اللوحة مخصصة للمسؤول فقط.");
-                return;
-            }
+            if (!auth.currentUser || auth.currentUser.email !== ADMIN_EMAIL) return;
 
             const title = document.getElementById('postTitle').value;
             const imageUrl = document.getElementById('postImage').value;
             const content = document.getElementById('postContent').value;
 
-            addDoc(collection(db, 'news'), {
-                title: title,
-                imageUrl: imageUrl,
-                content: content,
-                createdAt: serverTimestamp()
-            })
-            .then(() => {
-                const templateParams = {
-                    news_title: title,
-                    news_content: content
-                };
-
-                if (window.emailjs) {
-                    window.emailjs.send("service_rdi2d9g", "template_isgnte4", templateParams)
-                        .then(() => {
-                            console.log("Notification email dispatched dynamically via EmailJS!");
-                        })
-                        .catch((err) => {
-                            console.error("EmailJS execution failed:", err);
-                        });
-                }
-
-                alert("تم نشر الإعلان بنجاح وإرسال البريد الإلكتروني التلقائي للطلاب!");
-                publishForm.reset();
-                dashboardModal.style.display = 'none';
-            })
-            .catch((error) => {
-                console.error("Firestore write failure:", error);
-                alert("حدث خطأ أثناء النشر: تحقق من صلاحيات قواعد البيانات الخاصة بك.");
-            });
-        });
-
-        // تسجيل الخروج الآمن للمسؤول
-        document.getElementById('logoutBtn').addEventListener('click', () => {
-            signOut(auth).then(() => {
-                dashboardModal.style.display = 'none';
-                alert("تم تسجيل الخروج بنظام آمن.");
-            });
-        });
-
-        // إدارة بوابات وحسابات الطلاب
-        const studentLoginBtn = document.getElementById('studentLoginBtn');
-        const studentAuthModal = document.getElementById('studentAuthModal');
-        const closeStudentAuthBtn = document.getElementById('closeStudentAuthBtn');
-        const toggleStudentMode = document.getElementById('toggleStudentMode');
-        const studentAuthForm = document.getElementById('studentAuthForm');
-
-        const studentModalTitle = document.getElementById('studentModalTitle');
-        const studentNameGroup = document.getElementById('studentNameGroup');
-        const studentNameInput = document.getElementById('studentName');
-        const studentSubmitBtn = document.getElementById('studentSubmitBtn');
-
-        let isSignUpMode = false;
-
-        studentLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            studentAuthModal.style.display = 'flex';
-        });
-
-        closeStudentAuthBtn.addEventListener('click', () => {
-            studentAuthModal.style.display = 'none';
-            studentAuthForm.reset();
-            resetStudentModalMode();
-        });
-
-        toggleStudentMode.addEventListener('click', (e) => {
-            e.preventDefault();
-            isSignUpMode = !isSignUpMode;
-           
-            if (isSignUpMode) {
-                studentModalTitle.innerText = "إنشاء حساب طالب جديد";
-                studentNameGroup.style.display = "block";
-                studentNameInput.required = true;
-                studentSubmitBtn.innerText = "تسجيل حساب جديد";
-                toggleStudentMode.innerText = "لديك حساب بالفعل? تسجيل الدخول";
+            if (currentEditPostId) {
+                updateDoc(doc(db, 'news', currentEditPostId), {
+                    title: title, imageUrl: imageUrl, content: content
+                })
+                .then(() => {
+                    alert("تم تعديل البيانات بنجاح!");
+                    resetPublishForm();
+                    dashboardModal.style.display = 'none';
+                });
             } else {
-                resetStudentModalMode();
-            }
-        });
-
-        function resetStudentModalMode() {
-            isSignUpMode = false;
-            studentModalTitle.innerText = "تسجيل دخول الطلاب";
-            studentNameGroup.style.display = "none";
-            studentNameInput.required = false;
-            studentSubmitBtn.innerText = "دخول";
-            toggleStudentMode.innerText = "ليس لديك حساب؟ إنشاء حساب جديد";
-        }
-
-        studentAuthForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('studentEmail').value;
-            const password = document.getElementById('studentPassword').value;
-
-            if (isSignUpMode) {
-                const fullName = studentNameInput.value;
-                createUserWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        return updateProfile(userCredential.user, {
-                            displayName: fullName
+                addDoc(collection(db, 'news'), {
+                    title: title, imageUrl: imageUrl, content: content, createdAt: serverTimestamp()
+                })
+                .then(() => {
+                    if (window.emailjs) {
+                        window.emailjs.send("service_rdi2d9g", "template_isgnte4", {
+                            news_title: title, news_content: content
                         });
-                    })
-                    .then(() => {
-                        alert("تم إنشاء حسابك كطالب بنجاح ومرحباً بك في مدرسة دلائل الخير!");
-                        studentAuthModal.style.display = 'none';
-                        studentAuthForm.reset();
-                        resetStudentModalMode();
-                    })
-                    .catch((error) => {
-                        console.error("Student registration error:", error);
-                        alert("خطأ أثناء إنشاء الحساب: البريد مستخدم بالفعل أو كلمة المرور ضعيفة.");
-                    });
-            } else {
-                signInWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        alert(`مرحباً بك مجدداً يا ${userCredential.user.displayName || 'طالبنا العزيز'}! تم تسجيل الدخول بنجاح.`);
-                        studentAuthModal.style.display = 'none';
-                        studentAuthForm.reset();
-                    })
-                    .catch((error) => {
-                        console.error("Student login error:", error);
-                        alert("خطأ في تسجيل الدخول: يرجى التحقق من صحة البيانات المدخلة.");
-                    });
+                    }
+                    alert("تم نشر الإعلان الجديد وإخطار الطلاب بالبريد المدمج!");
+                    resetPublishForm();
+                    dashboardModal.style.display = 'none';
+                });
             }
         });
     </script>
